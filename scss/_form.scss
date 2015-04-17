@@ -1,0 +1,28 @@
+form {
+
+	& > div {
+		margin-bottom: 2em;
+		
+		input[type="text"] {
+			font-size: 2em;
+		}
+		
+		textarea {
+		  font-size: 1em;
+		}
+	
+		input[type="text"], textarea {
+			background: transparent;
+			width: 100% !important;
+			border: 1px dashed white;
+			color: white;
+			height: 1.8em;
+			
+			&:focus {
+				outline: 3px solid $primary-light;
+			}
+		}
+		
+	}
+}
+

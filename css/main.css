@@ -1,0 +1,669 @@
+/*
+Theme Name: Firestarter 2.1 Working
+Theme URI: http://www.mccartin.info
+Author: John McCartin
+Author URI: http://mccartin.info/
+Description: An absolute bare-bones WordPress starter theme based on H5BP & Pure CSS
+Version: 2.0.0
+Tags: starter, h5bp, sass, pure
+
+No rights reserved.
+
+Workin in SASS.
+
+
+
+
+      ___           ___       ___       ___           ___     
+     /\  \         /\__\     /\__\     /\  \         |\__\    
+    /::\  \       /:/  /    /:/  /    /::\  \        |:|  |   
+   /:/\:\  \     /:/  /    /:/  /    /:/\:\  \       |:|  |   
+  /::\~\:\  \   /:/  /    /:/  /    /::\~\:\  \      |:|__|__ 
+ /:/\:\ \:\__\ /:/__/    /:/__/    /:/\:\ \:\__\     /::::\__\
+ \/__\:\/:/  / \:\  \    \:\  \    \:\~\:\ \/__/    /:/~~/~   
+      \::/  /   \:\  \    \:\  \    \:\ \:\__\     /:/  /     
+      /:/  /     \:\  \    \:\  \    \:\ \/__/     \/__/      
+     /:/  /       \:\__\    \:\__\    \:\__\                  
+     \/__/         \/__/     \/__/     \/__/                  
+     
+      ___           ___           ___           ___           ___     
+     /\__\         /\  \         /\__\         /\  \         /\  \    
+    /:/  /        /::\  \       /:/  /        /::\  \       /::\  \   
+   /:/__/        /:/\:\  \     /:/  /        /:/\ \  \     /:/\:\  \  
+  /::\  \ ___   /:/  \:\  \   /:/  /  ___   _\:\~\ \  \   /::\~\:\  \ 
+ /:/\:\  /\__\ /:/__/ \:\__\ /:/__/  /\__\ /\ \:\ \ \__\ /:/\:\ \:\__\
+ \/__\:\/:/  / \:\  \ /:/  / \:\  \ /:/  / \:\ \:\ \/__/ \:\~\:\ \/__/
+      \::/  /   \:\  /:/  /   \:\  /:/  /   \:\ \:\__\    \:\ \:\__\  
+      /:/  /     \:\/:/  /     \:\/:/  /     \:\/:/  /     \:\ \/__/  
+     /:/  /       \::/  /       \::/  /       \::/  /       \:\__\    
+     \/__/         \/__/         \/__/         \/__/         \/__/    
+
+
+http://www.alleyhouseestudio.com
+
+
+
+
+My simplistic attempts at
+												  
+	  _|_|      _|_|      _|_|_|    _|_|_|    _|_|_|  
+	_|    _|  _|    _|  _|        _|        _|        
+	_|    _|  _|    _|  _|          _|_|      _|_|    
+	_|    _|  _|    _|  _|              _|        _|  
+	  _|_|      _|_|      _|_|_|  _|_|_|    _|_|_|   
+			  
+breaking from that model for where need be.
+                                                 
+    
+    
+
+  /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \__
+ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \_
+/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \__
+\ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / _
+ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ / 
+ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \_
+/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \__
+\ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / _
+ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ / 
+ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \_
+/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \__
+
+
+		TABLE OF CONTENTS
+		------------------------------------------
+		1.	Positioners
+		2.	Borders
+		3.	Margins
+		4.	Padding
+		5.	Z Axis
+		6.	Text Alignments
+		7.	Invert Colors
+		8.	Menu Styles
+		9.	Search Bar
+		10.	WP img alignment class support
+		11.	Page Builder Support
+		12.	Breadcrumb support
+		13.	Main Styles
+		14.	Footer Styles
+		15. Media Queries
+
+		** Dependencies: Pure CSS (responsive rollup) http://purecss.io/
+		
+
+\ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / _
+ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ / 
+ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \_
+/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \__
+\ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / _
+ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ / 
+ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \_
+/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \__
+\ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / _
+ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ /  \ \____/ / 
+ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \__/ / __ \ \_
+
+
+
+                _       _     _           
+__   ____ _ _ __(_) __ _| |__ | | ___  ___ 
+\ \ / / _` | '__| |/ _` | '_ \| |/ _ \/ __|
+ \ V / (_| | |  | | (_| | |_) | |  __/\__ \
+  \_/ \__,_|_|  |_|\__,_|_.__/|_|\___||___/
+
+*/
+/*
+
+
+ _                            _       
+(_)_ __ ___  _ __   ___  _ __| |_ ___ 
+| | '_ ` _ \| '_ \ / _ \| '__| __/ __|
+| | | | | | | |_) | (_) | |  | |_\__ \
+|_|_| |_| |_| .__/ \___/|_|   \__|___/
+            |_|                       
+*/
+.border {
+  border-color: #666666;
+}
+
+.border-mid {
+  border-color: #dddddd;
+}
+
+.border-1 {
+  border: 1px solid;
+}
+
+.border-2 {
+  border: 2px solid;
+}
+
+.border-4 {
+  border: 4px solid;
+}
+
+.border-top-1 {
+  border-top: 1px solid;
+}
+
+.border-top-2 {
+  border-top: 2px solid;
+}
+
+.border-top-4 {
+  border-top: 4px solid;
+}
+
+.border-bottom-1 {
+  border-bottom: 1px solid;
+}
+
+.border-bottom-2 {
+  border-bottom: 2px solid;
+}
+
+.border-bottom-4 {
+  border-bottom: 4px solid;
+}
+
+.border-left-1 {
+  border-left: 1px solid;
+}
+
+.border-left-2 {
+  border-left: 2px solid;
+}
+
+.border-left-4 {
+  border-left: 4px solid;
+}
+
+.border-right-1 {
+  border-right: 1px solid;
+}
+
+.border-right-2 {
+  border-right: 2px solid;
+}
+
+.border-right-4 {
+  border-right: 4px solid;
+}
+
+.pull-down {
+  bottom: 0;
+}
+
+.pull-right {
+  float: right;
+  right: 0;
+}
+
+.pull-left {
+  float: left;
+}
+
+.stretch-lr {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.stretch-all {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.fixed {
+  position: fixed !important;
+}
+
+.static {
+  position: static !important;
+}
+
+.relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+.centered {
+  margin: 0px auto;
+}
+
+.pure-menu {
+  list-style: none;
+}
+
+.dark {
+  background: #222222;
+  color: white;
+}
+.dark .border {
+  border-color: white;
+}
+.dark .pure-menu.pure-menu-open, .dark .pure-menu.pure-menu-horizontal li .pure-menu-children {
+  background: transparent;
+  border: 0px;
+}
+.dark .pure-menu a, .dark .pure-menu .pure-menu-can-have-children > li:after {
+  color: white;
+}
+.dark .pure-menu li a {
+  padding: 5px 0px;
+}
+.dark .pure-menu li a:hover, .dark .pure-menu li a:focus {
+  color: #dddddd;
+}
+.dark .pure-menu .sub-menu a {
+  color: white;
+  padding-left: 1em;
+}
+.dark .pure-menu .sub-menu li:hover > a {
+  color: #dddddd;
+}
+.dark a {
+  color: white;
+}
+.dark a:hover {
+  color: #dddddd;
+}
+
+.brand-title.dark {
+  background: orange;
+}
+
+.debug {
+  border: 1px solid;
+}
+
+.debug-red {
+  border-color: red;
+}
+
+.debug-yellow {
+  border-color: yellow;
+}
+
+.margin-1 {
+  margin: 1em;
+}
+
+.margin-2 {
+  margin: 2em;
+}
+
+.margin-4 {
+  margin: 4em;
+}
+
+.margin-top-1 {
+  margin-top: 1em;
+}
+
+.margin-top-2 {
+  margin-top: 2em;
+}
+
+.margin-top-4 {
+  margin-top: 4em;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 1em;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 2em;
+}
+
+.margin-bottom-4 {
+  margin-bottom: 4em;
+}
+
+.margin-right-1 {
+  margin-right: 1em;
+}
+
+.margin-right-2 {
+  margin-right: 2em;
+}
+
+.margin-right-4 {
+  margin-right: 4em;
+}
+
+.margin-left-1 {
+  margin-left: 1em;
+}
+
+.margin-left-2 {
+  margin-left: 2em;
+}
+
+.margin-left-4 {
+  margin-left: 4em;
+}
+
+.padding-1 {
+  padding: 1em;
+}
+
+.padding-2 {
+  padding: 2em;
+}
+
+.padding-4 {
+  padding: 4em;
+}
+
+.padding-top-1 {
+  padding-top: 1em;
+}
+
+.padding-top-2 {
+  padding-top: 2em;
+}
+
+.padding-top-4 {
+  padding-top: 4em;
+}
+
+.padding-bottom-1 {
+  padding-bottom: 1em;
+}
+
+.padding-bottom-2 {
+  padding-bottom: 2em;
+}
+
+.padding-bottom-4 {
+  padding-bottom: 4em;
+}
+
+.padding-right-1 {
+  padding-right: 1em;
+}
+
+.padding-right-2 {
+  padding-right: 2em;
+}
+
+.padding-right-4 {
+  padding-right: 4em;
+}
+
+.padding-left-1 {
+  padding-left: 1em;
+}
+
+.padding-left-2 {
+  padding-left: 2em;
+}
+
+.padding-left-4 {
+  padding-left: 4em;
+}
+
+@media screen and (min-width: 48em) {
+  .nav-menu {
+    background: transparent;
+  }
+
+  .md-pull-down {
+    bottom: 0;
+  }
+}
+.text-centered {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/*zs*/
+.top {
+  z-index: 99999;
+}
+
+.bottom {
+  z-index: -99999;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html, button, input, select, textarea,
+.pure-g [class*="pure-u"] {
+  font-family: "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+::selection {
+  background: orange;
+  color: white;
+}
+
+::-moz-selection {
+  background: orange;
+  color: white;
+}
+
+body {
+  color: #222222;
+}
+
+.dark {
+  background: #222222;
+  color: white;
+}
+
+a {
+  color: #222222;
+}
+
+a:hover {
+  background: orange;
+}
+
+.link-on-dark {
+  color: white;
+}
+
+.link-no-decor {
+  text-decoration: none;
+}
+
+.margin-1 {
+  margin: 1em;
+}
+
+.margin-2 {
+  margin: 2em;
+}
+
+.margin-4 {
+  margin: 4em;
+}
+
+.margin-top-1 {
+  margin-top: 1em;
+}
+
+.margin-top-2 {
+  margin-top: 2em;
+}
+
+.margin-top-4 {
+  margin-top: 4em;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 1em;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 2em;
+}
+
+.margin-bottom-4 {
+  margin-bottom: 4em;
+}
+
+.padding-1 {
+  padding: 1em;
+}
+
+.padding-2 {
+  padding: 2em;
+}
+
+.padding-4 {
+  padding: 4em;
+}
+
+.padding-top-1 {
+  padding-top: 1em;
+}
+
+.padding-top-2 {
+  padding-top: 2em;
+}
+
+.padding-top-4 {
+  padding-top: 4em;
+}
+
+.padding-bottom-1 {
+  padding-bottom: 1em;
+}
+
+.padding-bottom-2 {
+  padding-bottom: 2em;
+}
+
+.padding-bottom-4 {
+  padding-bottom: 4em;
+}
+
+.pure-g > div {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.layout {
+  min-height: 100%;
+  position: relative;
+}
+
+.reader {
+  max-width: 650px;
+}
+
+.pull-down {
+  bottom: 0;
+  position: fixed;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.stretch-lr {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.stretch-all {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.fixed {
+  position: fixed !important;
+}
+
+.static {
+  position: static !important;
+}
+
+.relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+.pure-menu.pure-menu-open, .pure-menu.pure-menu-horizontal li .pure-menu-children {
+  background: transparent;
+  border: 0px;
+}
+
+.pure-menu a, .pure-menu .pure-menu-can-have-children > li:after {
+  color: #222222;
+}
+
+.pure-menu li a {
+  padding: 5px 0px;
+}
+
+.pure-menu li a:hover, .pure-menu li a:focus {
+  background: orange;
+  color: #222222;
+}
+
+.dark .pure-menu.pure-menu-open, .dark .pure-menu.pure-menu-horizontal li .pure-menu-children {
+  background: transparent;
+  border: 0px;
+}
+.dark .pure-menu a, .dark .pure-menu .pure-menu-can-have-children > li:after {
+  color: white;
+}
+.dark .pure-menu li a {
+  padding: 5px 0px;
+}
+.dark .pure-menu li a:hover, .dark .pure-menu li a:focus {
+  background: orange;
+  color: white;
+}
+.dark .border {
+  border-color: white;
+}
+
+.border-top-1 {
+  border-top: 1px solid !important;
+}
+
+.border {
+  border-color: #222222;
+}
+
+@media (min-width: 48em) {
+  .header {
+    position: fixed;
+  }
+}

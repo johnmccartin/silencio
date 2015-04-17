@@ -1,0 +1,61 @@
+.pure-menu {
+  list-style: none;
+}
+
+.dark {
+  background: $primary-dark;
+
+
+  color: $primary-light;
+
+	
+
+	.border {
+	  border-color: $primary-light;
+	}
+
+	.pure-menu.pure-menu-open, .pure-menu.pure-menu-horizontal li .pure-menu-children {
+	  background: transparent;
+	  border: 0px;
+	}
+
+	.pure-menu a, .pure-menu .pure-menu-can-have-children>li:after {
+	  color: $primary-light;
+	}
+
+	.pure-menu li a {
+	}
+	
+	.pure-menu li a:hover {
+	  color: $primary-dark;
+	}
+	
+	.pure-menu li a:focus {
+	  color: $primary-light;
+	  background: transparent;
+	  outline: 0;
+	}
+	
+	.pure-menu .sub-menu a {
+	  color: $primary-light;
+	  padding-left: 1em;
+	}
+	
+	.pure-menu .sub-menu li:hover > a {
+	  color: $mid-light;
+	}
+	
+	a {
+	  color: $primary-light;
+	}
+	
+	a:hover {
+	  color: $primary-dark;
+	}
+	
+
+}
+
+.brand-title.dark {
+  background: $highlight;
+}

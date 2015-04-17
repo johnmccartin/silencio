@@ -1,0 +1,65 @@
+.nav-menu {
+  background: $mid-tone;
+}
+
+.pure-menu ul {
+  visibility: visible;
+  top: auto;
+  left: auto;
+  position: relative;
+}
+
+
+.pure-menu.pure-menu-open, .pure-menu.pure-menu-horizontal li .pure-menu-children {
+  background: transparent;
+  border: 0px;
+}
+
+.pure-menu a, .pure-menu .pure-menu-can-have-children>li:after {
+  color: $primary-dark;
+}
+
+.pure-menu li a {
+  padding: .5em .5em;
+  position: relative;
+  left: -.5em;
+  display: inline-block; 
+  font-weight: 300;
+}
+
+.pure-menu li a:hover {
+  color: $primary-dark;
+  background: $highlight;
+}
+
+.pure-menu li a:focus {
+  color: $primary-dark;
+  background: transparent;
+}
+
+.dark .mobile-menu {
+  background: $highlight;
+  color: $primary-dark;
+  
+  .pure-menu a {
+  	color: $primary-dark;
+  	
+  	&:hover {
+  	  color: $highlight;
+  	  background: $primary-dark;
+  	}
+  }
+  
+  
+}
+/*
+.closer {
+  width: 40px;
+  height: 40px;
+}
+
+.opener {
+  width: 40px;
+  height: 40px;
+}
+*/

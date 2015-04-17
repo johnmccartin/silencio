@@ -1,0 +1,50 @@
+.not-mobile {
+  display: none;
+}
+
+.mobile-only {
+  display: block;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+
+
+@media screen and (min-width: 48em) {
+	
+	.not-mobile {
+	  display: block;
+	}
+	
+	.mobile-only {
+	  display: none;
+	}
+	
+	.nav-menu {
+		background: transparent;
+	}
+
+
+	.md-pull-down {
+		bottom: 0;
+	}
+
+	.header {
+	  position: fixed;
+	}
+	
+	.content {
+	  padding-top: 2em;
+	}
+	
+	.sidebar {
+	  padding-top: 2em;
+	  height: auto;
+	  border-bottom: 0px;
+	}
+	
+	
+
+}
