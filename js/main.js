@@ -100,6 +100,7 @@ function linkit() {
 
 function loadContent(href){
   	var $c = $('.content');
+  	console.log(href);
 	$.ajax({
 	url: href,
 	cache: false,

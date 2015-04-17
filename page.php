@@ -24,7 +24,7 @@ if(!$ajax) get_header();
 			<?php while (have_posts()) : the_post(); ?>
 	
 			<article class="page margin-bottom-4" id="post-<?php the_ID(); ?>">
-				<h3 class="ptitle"><?php the_title(); ?></h3>
+				<?php if( !is_front_page() ) : ?><h3 class="ptitle"><?php the_title(); ?></h3><?php endif; ?>
 					<div class="">
 						<?php the_content(); ?>
 					</div><!-- / -->

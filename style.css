@@ -623,6 +623,10 @@ a:focus {
   font-size: 1.5em;
 }
 
+body.home.page p:first-child {
+  margin-top: 0;
+}
+
 .brand-title {
   font-size: 2em;
   width: 80%;
